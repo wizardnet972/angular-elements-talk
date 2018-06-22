@@ -1,0 +1,21 @@
+<header>
+  <i class="fa fa-github"></i>
+  Contribution activity
+
+  <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text">https://github.com/</span>
+    </div>
+    <input [(ngModel)]="repo" type="text" class="form-control">
+  </div>
+
+</header>
+
+<contrib-graph [repo]="repo" (pick)="pick($event)"></contrib-graph>
+
+<section *ngIf="contribution">
+  Contribution Details:
+  <pre>
+        {{contribution | json }}
+    </pre>
+</section>
